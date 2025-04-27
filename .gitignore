@@ -1,0 +1,14 @@
+
+# Playwright
+node_modules/
+/allure-report/
+/allure-results/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+
+#Ignora las variables de entorno sensibles
+.env
+
