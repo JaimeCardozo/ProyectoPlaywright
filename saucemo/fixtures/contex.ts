@@ -6,8 +6,9 @@ export const test = base.extend<{
   context: async ({}, use) => {
     // Lanzar el navegador sin contexto persistente
     const browser = await chromium.launch({
-      headless: false,  // Desactiva modo headless para ver el navegador
+      //headless: false,  // Desactiva modo headless para ver el navegador
       slowMo: 500,
+      headless: process.env.CI ? true : false,
       args: [
         //'--auto-open-devtools-for-tabs',  // Abrir DevTools automáticamente
         //'--window-size=280,768',          // Configurar tamaño de la ventana
