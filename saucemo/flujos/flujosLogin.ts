@@ -1,7 +1,7 @@
 import { expect, Locator, Page, TestInfo } from '@playwright/test';
 import { attachment, step } from 'allure-js-commons';
 import { Login } from '../pages/login';
-import { url } from '../utils/globals';
+import { URL } from '../utils/globals';
 
 async function ValidarYCapturarResultado(pageSauce: Page, resultadoEsperado: Locator, nombreCaptura: string){
     await expect(resultadoEsperado).toBeVisible();
@@ -12,8 +12,8 @@ async function ValidarYCapturarResultado(pageSauce: Page, resultadoEsperado: Loc
 
 export async function gotoPage(pageSauce: Page) {
     await step('Ir a la pagina', async () => {
-        await pageSauce.goto(url.SAUCEDEMO);
-        const pageTitle = pageSauce.getByText('Swag Labs');
+        await pageSauce.goto(URL.SAUCEDEMO);
+        const pageTitle = pageSauce.getByText('Swag Labs2');
         await ValidarYCapturarResultado(pageSauce, pageTitle, 'Validemos url de la pagina');
     });
     

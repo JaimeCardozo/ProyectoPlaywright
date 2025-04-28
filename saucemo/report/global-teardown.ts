@@ -28,7 +28,7 @@ export default async () => {
   } catch (readError) {
     console.log('No se encontró un archivo de error. Asumiendo ejecución exitosa.');
   }
-  const reportUrl = 'http://10.10.0.28:5055/';
+  const reportUrl = 'http://127.0.0.1:5055';
 
   try {
     console.log('Generando y sirviendo el reporte de Allure...');

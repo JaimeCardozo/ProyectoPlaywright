@@ -4,6 +4,7 @@ import { gotoPage, loginSuccess } from '../flujos/flujosLogin';
 import { Context } from 'vm';
 import fs from 'fs/promises';
 import path from 'path';
+import { getEnvVariable } from '../utils/globals';
 
 
 test.describe('Flujos Carrito de compra', () => {
@@ -33,7 +34,7 @@ test.describe('Flujos Carrito de compra', () => {
         attachment('Información', 'Parte final de las pruebas, se pasa a cerrar la grabación', 'text/plain');
         await test.step('Pasos finales', async () => {
         //await Grabacion(testInfo);
-        await pageSauce.waitForTimeout(2000);
+        await pageSauce.waitForTimeout(10000);
          if (testInfo.status === 'failed' || testInfo.status ==='timedOut') {
            const error = testInfo.error as Error;
            const errorMessage = error.message || 'Error desconocido';
@@ -92,7 +93,7 @@ test.describe('Flujos Carrito de compra', () => {
     });
 
     async function creacionContexto(contex: Context) {
-        await step('Creación del contexto', async () => {
+        await step('Creación del contexto', async () => { 
         pageSauce = await contex.newPage();
         });
     };

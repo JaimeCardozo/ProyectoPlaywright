@@ -8,7 +8,7 @@ export const test = base.extend<{
     const browser = await chromium.launch({
       //headless: false,  // Desactiva modo headless para ver el navegador
       slowMo: 500,
-      headless: process.env.CI ? true : false,
+      headless: process.env.CI ? true : true,
       args: [
         //'--auto-open-devtools-for-tabs',  // Abrir DevTools automáticamente
         //'--window-size=280,768',          // Configurar tamaño de la ventana

@@ -1,6 +1,6 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import { GeneralTemplate } from './generalTemplate';
-import { url } from '../utils/globals';
+import { URL } from '../utils/globals';
 import { fillFieldAndPressSpace } from '../utils/filmsUtils';
 
 export class Login extends GeneralTemplate{
