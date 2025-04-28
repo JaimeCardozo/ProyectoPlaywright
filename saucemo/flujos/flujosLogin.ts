@@ -13,7 +13,7 @@ async function ValidarYCapturarResultado(pageSauce: Page, resultadoEsperado: Loc
 export async function gotoPage(pageSauce: Page) {
     await step('Ir a la pagina', async () => {
         await pageSauce.goto(URL.SAUCEDEMO);
-        const pageTitle = pageSauce.getByText('Swag Labs2');
+        const pageTitle = pageSauce.getByText('Swag Labs');
         await ValidarYCapturarResultado(pageSauce, pageTitle, 'Validemos url de la pagina');
     });
     
