@@ -22,7 +22,6 @@ export async function loginSuccess(pageSauce: Page) {
     await step('Ingreso al login', async () => {
         const login = new Login(pageSauce);
         await login.loginAccess();
-        
     });
     
     

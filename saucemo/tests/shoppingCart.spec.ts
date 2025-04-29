@@ -89,7 +89,7 @@ test.describe('Flujos Carrito de compra', () => {
         
         await creacionContexto(context);
         await gotoPage(pageSauce);
-        //await loginSuccess(pageSauce);
+        await loginSuccess(pageSauce);
     });
 
     async function creacionContexto(contex: Context) {

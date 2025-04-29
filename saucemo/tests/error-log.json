@@ -1,5 +1,5 @@
 {
-  "isSuccessful": false,
-  "errorMessage": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Swag Labs2')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Swag Labs2')\u001b[22m\n",
-  "errorStack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Swag Labs2')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Swag Labs2')\u001b[22m\n\n    at ValidarYCapturarResultado (C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright\\saucemo\\flujos\\flujosLogin.ts:7:37)\n    at C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright\\saucemo\\flujos\\flujosLogin.ts:17:15"
+  "isSuccessful": true,
+  "errorMessage": "",
+  "errorStack": ""
 }
