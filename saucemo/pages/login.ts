@@ -4,7 +4,7 @@ import { CREDENTIALS, URL } from '../utils/globals';
 import { fillFieldAndPressSpace } from '../utils/filmsUtils';
 
 export class Login extends GeneralTemplate{
-
+    //Esta es la clase del login
     private readonly user: Locator;
     private readonly password: Locator;
     private readonly buttonLogin: Locator;
