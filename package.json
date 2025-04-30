@@ -2,7 +2,11 @@
   "name": "proyectoplaywright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test --reporter=line,allure-playwright",
+    "allure:report": "allure generate --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -14,7 +14,7 @@ export async function gotoPage(pageSauce: Page) {
     await step('Ir a la pagina', async () => {
         await pageSauce.goto(URL.SAUCEDEMO);
         const pageTitle = pageSauce.getByText('Swag Labs');
-        await ValidarYCapturarResultado(pageSauce, pageTitle, 'Validemos url de la pagina');
+        await ValidarYCapturarResultado(pageSauce, pageTitle, 'URL de la pagina validada');
     });
     
 };
@@ -22,6 +22,8 @@ export async function loginSuccess(pageSauce: Page) {
     await step('Ingreso al login', async () => {
         const login = new Login(pageSauce);
         await login.loginAccess();
+        const logiSatifactorio = pageSauce.locator('[data-test="title"]');
+        await ValidarYCapturarResultado(pageSauce, logiSatifactorio, 'Login Validado');
     });
     
     
