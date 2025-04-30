@@ -8,7 +8,7 @@
   "allure:report": "allure generate --clean -o allure-report",
   "allure:open": "allure open allure-report",
   "allure:publish": "npx gh-pages -d allure-report",
-  "allure:full-publish": "npm run allure:clean && npm run test && npm run allure:report && npm run allure:publish"
+  "allure:full-publish": "npm-run-all allure:clean --continue-on-error test allure:report allure:publish"
 },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "allure-commandline": "^2.34.0",
     "allure-playwright": "^3.2.1",
     "gh-pages": "^6.3.0",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1"
   },
   "dependencies": {
