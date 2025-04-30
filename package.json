@@ -5,7 +5,8 @@
   "scripts": {
     "test": "playwright test --reporter=line,allure-playwright",
     "allure:report": "allure generate --clean -o allure-report",
-    "allure:open": "allure open allure-report"
+    "allure:open": "allure open allure-report",
+    "allure:publish": "npm run test && npm run allure:report && gh-pages -d allure-report"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.2",
     "allure-commandline": "^2.34.0",
-    "allure-playwright": "^3.2.1"
+    "allure-playwright": "^3.2.1",
+    "gh-pages": "^6.3.0"
   },
   "dependencies": {
     "allure-js-commons": "^3.2.1",
