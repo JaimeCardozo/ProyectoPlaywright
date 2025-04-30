@@ -48,3 +48,5 @@ Playwright
 
 Allure Commandline
 
+Allure-Report: https://jaimecardozo.github.io/ProyectoPlaywright/
+
