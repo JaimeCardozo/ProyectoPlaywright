@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test --reporter=line,allure-playwright",
-    "allure:report": "allure generate --clean -o allure-report",
-    "allure:open": "allure open allure-report",
-    "allure:publish": "npm run test && npm run allure:report && gh-pages -d allure-report"
-  },
+  "test": "playwright test --reporter=line,allure-playwright",
+  "allure:clean": "rimraf allure-report allure-results",
+  "allure:report": "allure generate --clean -o allure-report",
+  "allure:open": "allure open allure-report",
+  "allure:publish": "npx gh-pages -d allure-report",
+  "allure:full-publish": "npm run allure:clean && npm run test && npm run allure:report && npm run allure:publish"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,7 +19,8 @@
     "@types/node": "^22.15.2",
     "allure-commandline": "^2.34.0",
     "allure-playwright": "^3.2.1",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "allure-js-commons": "^3.2.1",

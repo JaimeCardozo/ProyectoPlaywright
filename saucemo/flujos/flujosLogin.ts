@@ -22,7 +22,7 @@ export async function loginSuccess(pageSauce: Page) {
     await step('Ingreso al login', async () => {
         const login = new Login(pageSauce);
         await login.loginAccess();
-        const logiSatifactorio = pageSauce.locator('[data-test="title"]');
+        const logiSatifactorio = pageSauce.locator('[data-test="title"]2');
         await ValidarYCapturarResultado(pageSauce, logiSatifactorio, 'Login Validado');
     });
     

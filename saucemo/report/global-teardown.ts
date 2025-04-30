@@ -28,14 +28,14 @@ export default async () => {
   } catch (readError) {
     console.log('No se encontró un archivo de error. Asumiendo ejecución exitosa.');
   }
-  const reportUrl = 'http://127.0.0.1:5055';
+  const reportUrl = 'https://jaimecardozo.github.io/ProyectoPlaywright/#';
 
   try {
     console.log('Generando y sirviendo el reporte de Allure...');
 
     //const allureUrl = await emailService.generateAndServeAllureReport2();
     //console.log(`Reporte disponible en: ${allureUrl}`);  
-    await emailService.generateAndServeAllureReport();
+    //await emailService.generateAndServeAllureReport(); -->Aqui se sirve el reporte de Allure Localmente....
     const subject = isSuccessful ? 'Reporte de pruebas - Éxitoso' : 'Reporte de pruebas - Fallo detectado';
     const errorDetails = `
       <h1 style="color: #d32f2f;">🚨 Pruebas fallidas</h1>
@@ -45,15 +45,15 @@ export default async () => {
     `;
 
     console.log('Enviando correo con el reporte...');
-    //orlando.chinchilla@red5g.co
-    await emailService.sendTestReport(', sqa20@red5g.co', subject, isSuccessful, reportUrl, errorDetails);
+    
+    await emailService.sendTestReport(',sqa20@red5g.co', subject, isSuccessful, reportUrl, errorDetails);
 
     console.log('Proceso completado exitosamente.');
   } catch (error) {
     console.error('Error durante el proceso:', error.message);
 
     await emailService.sendTestReport(
-      ', sqa20@red5g.co',
+      'reinagr3@gmail.com, sqa20@red5g.co',
       'Reporte de Pruebas Automatizadas (Con Errores)',
       false,
       reportUrl,
