@@ -78,61 +78,6 @@ export class EmailService {
   }
 
 
-  async generateAndServeAllureReport2(): Promise<string> {
-    try {
-      console.log('Generando reporte de Allure...');
-      const allureResultsPath = path.join(this.baseReportPath, 'allure-results');
-  
-      // Verificar y liberar el puerto antes de servir el reporte
-      await this.checkAndReleasePort(this.allurePort);
-  
-      console.log('Ejecutando comando para servir Allure...');
-      
-      return new Promise((resolve, reject) => {
-        let outputData = '';
-  
-        // Generar y servir el reporte, capturando la salida
-        const allureProcess = spawn('npx', ['allure', 'serve', allureResultsPath, '--port', `${this.allurePort}`], {
-          shell: true,
-          stdio: ['ignore', 'pipe', 'pipe'],  // Capturar salida estándar (stdout)
-          detached: true,
-        });
-        // Desvincular el proceso para que no bloquee el flujo principal
-        allureProcess.unref();
-
-        allureProcess.stdout.on('data', (data) => {
-          outputData += data.toString();
-        });
-  
-        allureProcess.stderr.on('data', (data) => {
-          console.error(`Error: ${data}`);
-        });
-  
-        // Esperar a que se genere la URL en la salida
-        allureProcess.stdout.on('end', () => {
-          const urlMatch = outputData.match(/Server started at <(http:\/\/\S+)>/);
-          if (urlMatch && urlMatch[1]) {
-            console.log(`URL capturada: ${urlMatch[1]}`);
-            resolve(urlMatch[1]);
-          } else {
-            reject(new Error('No se encontró la URL en la salida del comando.'));
-          }
-        });
-  
-        console.log('El reporte se está sirviendo en segundo plano.');
-      });
-    } catch (error) {
-      console.error('Error al generar o servir el reporte de Allure:', error.message);
-      throw error;
-    }
-  }
-
-  // Generar el reporte y guardar la URL
-
-// Llamar a la función y capturar la URL
-
-
-
   /**
    * Envía un correo con el reporte de prueba.
    */
