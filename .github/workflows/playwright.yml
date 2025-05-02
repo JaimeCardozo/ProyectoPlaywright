@@ -15,6 +15,9 @@ jobs:
     env: 
       USER: ${{ secrets.USER }}
       PASS: ${{ secrets.PASS }}
+      EMAIL_SERVICE: ${{secrets.EMAIL_SERVICE}}
+      EMAIL_PASS: ${{secrets.EMAIL_PASS}}
+      EMAIL_SEND: ${{secrets.EMAIL_SEND}}
 
     steps:
       - uses: actions/checkout@v4
