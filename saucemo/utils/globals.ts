@@ -18,3 +18,9 @@ export const CREDENTIALS = {
     USER: getEnvVariable('USER'),
     PASS: getEnvVariable('PASS'),
 };
+
+export const EMAILS = {
+    EMAIL_SERVICE: getEnvVariable('EMAIL_SERVICE'),
+    EMAIL_PASS: getEnvVariable('EMAIL_PASS'),
+    EMAIL_SEND: getEnvVariable('EMAIL_SEND'),
+}

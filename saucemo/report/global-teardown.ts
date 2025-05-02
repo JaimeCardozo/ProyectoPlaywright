@@ -1,11 +1,12 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import {EmailService} from './emails'
+import { EMAILS } from '../utils/globals';
 
 export default async () => {
   const emailService = new EmailService(
-    'realesnotificaciones@gmail.com',
-    'gflapimrrqqigoer',
+    EMAILS.EMAIL_SERVICE,
+    EMAILS.EMAIL_PASS,
     'C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright'
   );
 
@@ -46,14 +47,14 @@ export default async () => {
 
     console.log('Enviando correo con el reporte...');
     
-    await emailService.sendTestReport(',sqa20@red5g.co', subject, isSuccessful, reportUrl, errorDetails);
+    await emailService.sendTestReport(EMAILS.EMAIL_SEND, subject, isSuccessful, reportUrl, errorDetails);
 
     console.log('Proceso completado exitosamente.');
   } catch (error) {
     console.error('Error durante el proceso:', error.message);
 
     await emailService.sendTestReport(
-      'reinagr3@gmail.com, sqa20@red5g.co',
+      EMAILS.EMAIL_SEND,
       'Reporte de Pruebas Automatizadas (Con Errores)',
       false,
       reportUrl,
