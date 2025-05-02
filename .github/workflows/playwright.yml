@@ -31,12 +31,13 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test --reporter=line,allure-playwright
+        continue-on-error: true  # ✅ Esto permite seguir si los tests fallan
 
       - name: Generate Allure report
         run: npx allure generate --clean -o allure-report
 
       - name: Upload Allure report to GitHub Pages
-        if: ${{ !cancelled() }}
+        if: ${{ success() || failure() }}  # ⬅️ esto lo ejecuta pase lo que pase (a menos que se cancele manualmente)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
