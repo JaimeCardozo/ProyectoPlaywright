@@ -9,7 +9,7 @@ import { getEnvVariable } from '../utils/globals';
 
 test.describe('Flujos Carrito de compra', () => {
     let pageSauce: any;
-    const errorLogPath = path.resolve(__dirname, 'error-log.json');
+    const errorLogPath = path.resolve(process.cwd(), 'results/error-log.json');
     
 
     test.beforeAll(async () => {

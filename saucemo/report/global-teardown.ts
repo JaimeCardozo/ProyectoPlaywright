@@ -9,7 +9,7 @@ export default async () => {
     'C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright'
   );
 
-  const errorLogPath = path.resolve('C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright\\saucemo\\tests', 'error-log.json');
+  const errorLogPath = path.resolve(process.cwd(), 'results/error-log.json');
   let isSuccessful = true;
   let errorMessage = '';
   let errorStack = ''
