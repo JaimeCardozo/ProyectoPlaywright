@@ -1,4 +1,6 @@
-import { test as base, chromium, expect, type BrowserContext } from '@playwright/test';
+import { test as base, chromium, expect, Page, type BrowserContext } from '@playwright/test';
+import { step } from 'allure-js-commons';
+import { Context } from 'vm';
 
 export const test = base.extend<{
   context: BrowserContext;
@@ -29,3 +31,9 @@ export const test = base.extend<{
     }
   },
 });
+
+export async function creacionContexto(contex: Context): Promise<Page> {
+  return await step('Creación del contexto', async () => {
+      return await contex.newPage();
+  });
+}

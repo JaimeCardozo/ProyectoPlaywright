@@ -1,5 +1,5 @@
 {
-  "isSuccessful": false,
-  "errorMessage": "Error: expect.toBeVisible: Unexpected token \"2\" while parsing css selector \"[data-test=\"title\"]2\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for [data-test=\"title\"]2\u001b[22m\n",
-  "errorStack": "Error: expect.toBeVisible: Unexpected token \"2\" while parsing css selector \"[data-test=\"title\"]2\". Did you mean to CSS.escape it?\nCall log:\n\u001b[2m  - expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for [data-test=\"title\"]2\u001b[22m\n\n    at ValidarYCapturarResultado (C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright\\saucemo\\flujos\\flujosLogin.ts:7:37)\n    at C:\\Users\\RED5G\\Desktop\\ProyectoPlaywright\\saucemo\\flujos\\flujosLogin.ts:26:15"
+  "isSuccessful": true,
+  "errorMessage": "",
+  "errorStack": ""
 }

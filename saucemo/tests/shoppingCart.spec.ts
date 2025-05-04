@@ -1,10 +1,9 @@
 import { attachment, description, label, step } from 'allure-js-commons';
-import { test } from '../fixtures/contex';
+import { creacionContexto, test } from '../fixtures/contex';
 import { gotoPage, loginSuccess } from '../flujos/flujosLogin';
-import { Context } from 'vm';
 import fs from 'fs/promises';
 import path from 'path';
-import { getEnvVariable } from '../utils/globals';
+
 
 
 test.describe('Flujos Carrito de compra', () => {
@@ -87,16 +86,12 @@ test.describe('Flujos Carrito de compra', () => {
         label('suite','Prueba de smoking')
         description('Se simula la compra de un producto')
         
-        await creacionContexto(context);
+        
+        pageSauce = await creacionContexto(context);
         await gotoPage(pageSauce);
         await loginSuccess(pageSauce);
     });
 
-    async function creacionContexto(contex: Context) {
-        await step('Creación del contexto', async () => { 
-        pageSauce = await contex.newPage();
-        });
-    };
     
     
 })
