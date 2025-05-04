@@ -1,6 +1,6 @@
 import { attachment, description, label, step } from 'allure-js-commons';
 import { creacionContexto, test } from '../fixtures/contex';
-import { gotoPage, loginSuccess } from '../flujos/flujosLogin';
+import { choicesProduct, gotoPage, loginSuccess } from '../flujos/generalSteps';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -78,7 +78,7 @@ test.describe('Flujos Carrito de compra', () => {
 
     
 
-    test('Comprar un producto', async ({ context }) => {
+    test('Comprar un productos', async ({ context }) => {
         label('epic', 'Flujo Compras')
         label('feature','Simular una compra')
         label('story', 'Simular Compra')
@@ -90,6 +90,7 @@ test.describe('Flujos Carrito de compra', () => {
         pageSauce = await creacionContexto(context);
         await gotoPage(pageSauce);
         await loginSuccess(pageSauce);
+        await choicesProduct(pageSauce);
     });
 
     

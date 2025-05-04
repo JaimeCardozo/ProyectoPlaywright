@@ -24,3 +24,12 @@ export const EMAILS = {
     EMAIL_PASS: getEnvVariable('EMAIL_PASS'),
     EMAIL_SEND: getEnvVariable('EMAIL_SEND'),
 }
+
+export const PRODUCTS={
+    GENERALPRODUC: '[data-test="add-to-cart-sauce-labs-',
+    BACKPACK: 'backpack"]',
+    BIKELIGHT: 'bike-light"]',
+    BOLTTSHIRT: 'bolt-t-shirt"]',
+    FLECEJACKET: 'fleece-jacket"]',
+    ONESIE: 'onesie"]'
+}

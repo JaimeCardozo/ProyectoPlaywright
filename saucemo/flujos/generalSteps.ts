@@ -2,6 +2,7 @@ import { expect, Locator, Page, TestInfo } from '@playwright/test';
 import { attachment, step } from 'allure-js-commons';
 import { Login } from '../pages/login';
 import { URL } from '../utils/globals';
+import { Inventory } from '../pages/inventory';
 
 async function ValidarYCapturarResultado(pageSauce: Page, resultadoEsperado: Locator, nombreCaptura: string){
     await expect(resultadoEsperado).toBeVisible();
@@ -24,7 +25,14 @@ export async function loginSuccess(pageSauce: Page) {
         await login.loginAccess();
         const logiSatifactorio = pageSauce.locator('[data-test="title"]');
         await ValidarYCapturarResultado(pageSauce, logiSatifactorio, 'Login Validado');
-    });
+    }); 
     
+};
+
+export async function choicesProduct(pageSauce: Page){
+    await step('Escogiendo productos', async () => {
+        const producChoice = new Inventory(pageSauce);
+        await producChoice.allProductBuys();    
+    })
     
 }
