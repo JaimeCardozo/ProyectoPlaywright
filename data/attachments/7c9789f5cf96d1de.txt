@@ -1,0 +1,6 @@
+Limpiando archivo de error-log.json al inicio de las pruebas...
+BACKPACK: [data-test="add-to-cart-sauce-labs-backpack"]
+BIKELIGHT: [data-test="add-to-cart-sauce-labs-bike-light"]
+BOLTTSHIRT: [data-test="add-to-cart-sauce-labs-bolt-t-shirt"]
+FLECEJACKET: [data-test="add-to-cart-sauce-labs-fleece-jacket"]
+ONESIE: [data-test="add-to-cart-sauce-labs-onesie"]
