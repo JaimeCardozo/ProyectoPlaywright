@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Se simula la compra de un producto","20213","Comprar un productos","chromium","Fri Jun 20 23:01:58 UTC 2025","passed","Fri Jun 20 23:02:18 UTC 2025","Flujos Carrito de compra","Prueba de smoking","",""
+"Se simula la compra de un producto","18867","Comprar un productos","webkit","Fri Jun 20 23:02:38 UTC 2025","passed","Fri Jun 20 23:02:57 UTC 2025","Flujos Carrito de compra","Prueba de smoking","",""
+"Se simula la compra de un producto","18407","Comprar un productos","firefox","Fri Jun 20 23:02:19 UTC 2025","passed","Fri Jun 20 23:02:38 UTC 2025","Flujos Carrito de compra","Prueba de smoking","",""
